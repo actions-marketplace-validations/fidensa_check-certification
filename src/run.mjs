@@ -81,7 +81,7 @@ async function main() {
     console.log('No capabilities to check. Provide them via the "capabilities" input or a .fidensa.yml config file.');
     setOutput('passed', 'true');
     setOutput('results', '[]');
-    process.exit(0);
+    return;
   }
 
   const policy = parsePolicy();
@@ -121,14 +121,12 @@ async function main() {
   if (!checkResult.passed) {
     if (warnOnly) {
       console.log('⚠️  Certification check failed but warn-only mode is enabled. Continuing.');
-      process.exit(0);
     } else {
       console.log('❌ Certification check failed.');
-      process.exit(1);
+      process.exitCode = 1;
     }
   } else {
     console.log('✅ All certification checks passed.');
-    process.exit(0);
   }
 }
 
