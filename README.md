@@ -1,5 +1,7 @@
 # Fidensa Certification Check
 
+[![Fidensa](https://img.shields.io/badge/Fidensa-Certification_Check-d4a843)](https://fidensa.com)
+
 A GitHub Action that checks [Fidensa](https://fidensa.com) certification status for AI capabilities (MCP servers, skills, rules files, hooks, sub-agents, and plugins) in your CI/CD pipeline.
 
 Fail or warn your build if a dependency's certification is missing, expired, suspended, or below your trust threshold.
